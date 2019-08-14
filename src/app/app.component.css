@@ -1,0 +1,13 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.tool-title {
+    margin-bottom: 0;
+}
+
+.tool-author {
+    color: rgb(138, 136, 136);
+}

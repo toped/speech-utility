@@ -1,0 +1,47 @@
+textarea {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid rgba(202, 202, 202, 0.438);
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.default-speeches-list,
+.page-controls {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.default-speeches-list li,
+.page-controls li {
+    display: inline;
+    margin-right: 10px;
+}
+
+pre {
+    white-space: pre-wrap;
+    font-family: 'Roboto', sans-serif;
+}
+
+.frequently-used-word {
+    cursor: pointer;
+}
+
+#speech-summary {
+    display: grid;
+    height: 100px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 100px;
+}
+
+#word-count {
+    grid-column: 1 / 3;
+}
+
+#word-frequency {
+    grid-column: 3 / 5;
+}
+
+#item3 {
+    grid-column: 5 / 7;
+}

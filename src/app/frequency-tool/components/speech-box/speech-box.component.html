@@ -1,0 +1,39 @@
+<ul class='default-speeches-list'>
+    <li><button (click)="doUpdateDefaultSpeech('I Have a Dream')">I Have a Dream</button></li>
+    <li><button (click)="doUpdateDefaultSpeech('New Hampshire Speech')">New Hampshire speech</button></li>
+    <li><button (click)="doUpdateDefaultSpeech('Testing')">Testing</button></li>
+    <li><button (click)="doClearSpeechBox()">clear</button></li>
+</ul>
+
+<ul class='page-controls'>
+    <li><button (click)="doToggleSpeechInputBox()">Hide Input Box</button></li>
+</ul>
+
+<br>
+
+<div [@speechBoxOopenClose]="speechBoxIsOpen ? 'open' : 'closed'">
+    <form [formGroup]="speechForm">
+        <div>
+            <textarea name="speech-input" id="speech-input" rows="10" formControlName="speechInput" (input)="didInputSpeech()"></textarea>
+        </div>
+    </form>
+</div>
+
+<div>
+    <pre *ngIf="displaySpeech" [innerHTML]="displaySpeech | safeStyle"></pre>
+</div>
+
+<div id="speech-summary">
+    <div id="word-count">
+        <h3>Word Count ({{words.length}})</h3>
+    </div>
+    <div id="word-frequency">
+        <h3>Frequently Used Words ({{frequentlyUsedWords.length}})</h3>
+        <ul>
+            <li class="frequently-used-word" *ngFor="let word of frequentlyUsedWords" (click)="doToggleHighlightOccurances(word)">
+                {{word.word}}: {{word.frequency}}
+            </li>
+        </ul>
+    </div>
+    <div id="item3"></div>
+</div>
